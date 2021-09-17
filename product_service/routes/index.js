@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let product = require("../controller/ProductController");
-let {isAuthenticated} = require("../middle_ware/authentication")
+let { isAuthenticated } = require("../middle_ware/authentication")
 
 /* API product listing... */
 router.post('/get-all', isAuthenticated, product.getAll);

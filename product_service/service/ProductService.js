@@ -1,7 +1,8 @@
 const { Pool } = require('pg');
 const config = require("../config/pgdb");
-const { param } = require('../routes');
 const pool = new Pool(config.pg);
+const amqp = require('../middle_ware/rabbitMQ') 
+
 
 const getAll = async (params) => {
     let sql = `Select * from public.product`;
@@ -36,7 +37,15 @@ const buyProduct = async (params) => {
     }
     let sql = `SELECT name, description, price, id FROM public.product where id = ANY($1::int[])`;
     const {rows} = await pool.query(sql, [ids]);
+    
+    let chanel = await amqp.connectAmqp();
+    chanel.sendToQueue("ORDER_QUEUE",Buffer.from (JSON.stringify({
+        rows,
+        email:"him_na@gmail.com"
+    })))
+        
     rs.message = rows
+    
     return rs; 
 }
 

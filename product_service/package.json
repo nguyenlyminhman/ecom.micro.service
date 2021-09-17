@@ -6,12 +6,13 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "amqplib": "^0.8.0",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.12",
-    "pg": "^8.7.1",
-    "jsonwebtoken": "^8.5.1"
+    "pg": "^8.7.1"
   }
 }
