@@ -1,6 +1,6 @@
 # ecom.micro.service
 
-Ecom.Micro.Service is a project based on microserive architect, which ussing NodeJs & RabbitMQ.
+Ecom.Micro.Service is a project based on microserive architect, which using NodeJs & RabbitMQ.
 
 - _register_service_
 - _authen_service_
@@ -14,16 +14,16 @@ Ecom.Micro.Service is a project based on microserive architect, which ussing Nod
 - get all user
 
 ### authen_service
-- login and get tokken to access other services.
+- login and get token to access other services.
 
 ### product_service
 - create a new product
-- find product by id
+- find a product by id
 - get all
-- buy a list product
+- buy a list of product
 
 ### order_service
-- show buyed product from product_services
+- show bought product from product_services
 
 ## Technology
 
@@ -49,7 +49,7 @@ node app
 Install the PostgresQL and start the server.
 
 ```sh
-import ecom.sql file in project
+import ecom.sql file in the project
 ```
 
 Install the RabbitMQ and start.
